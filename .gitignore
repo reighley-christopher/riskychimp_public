@@ -108,11 +108,5 @@ config/smtp.yml
 flash/fingerprint.swf
 tags
 
-# ignore constants, which may contain credentials and machine-specific info
-config/initializers/constants.rb
-
-# ignore secret token
-config/initializers/secret_token.rb
-
 # ignore database config
 config/database.yml
