@@ -1,6 +1,6 @@
 Riskybiz Project
 http://www.riskychimp.com
-
+```
 How to setup the projest?
 bundle
 rake db:drop db:create db:migrate
@@ -10,4 +10,5 @@ Notice:
 Login with admin role:
 -user: admin@riskybiz.com
 -password: secret
+```
 
