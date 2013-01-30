@@ -1,0 +1,18 @@
+= page_header 'Reviewer Information'
+
+%p
+  .strong Email:
+  = @reviewer.email
+%p
+  .strong Company Name:
+  = @reviewer.company_name
+%p
+  .strong Company Website:
+  = @reviewer.company_website
+%p
+  .strong Logo:
+  = logo_tag @reviewer.logo_url
+
+= link_to "Edit", edit_user_reviewer_path(@reviewer, user_id: @merchant.id)
+= link_to "Delete", user_reviewer_path(@reviewer, user_id: @merchant.id), method: :delete, confirm: t("reviewers.destroy.confirm")
+= link_to "Show all", user_reviewers_path(user_id: @merchant.id)

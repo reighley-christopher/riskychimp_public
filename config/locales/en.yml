@@ -1,0 +1,52 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  users:
+    access:
+      denied: "Access denied."
+    information:
+      updated: "Update information successfully."
+    invitations:
+      report_error: "We have received your report. Thank you."
+    password:
+      updated: "Password successfully changed."
+      current:
+        invalid: "Your password was incorrect"
+    setting:
+      updated: "Update setting successfully."
+  api:
+    invalid_key: "Invalid API Key"
+  transactions:
+    notexisted: "Transaction does not exist"
+    access:
+      denied: "Access denied."
+    notes:
+      created: "Note has been created"
+      updated: "Update successfully"
+  admin:
+    users:
+      updated: "Update information successfully."
+      invited: "Invitation email has been sent successfully."
+      invitation:
+        already: "This user has already accepted."
+        not_invited: "This user is not invited."
+      destroy:
+        confirm: "Are you sure?"
+      access:
+        denied: "Access denied."
+  reviewers:
+    updated: "Update information successfully."
+    invited: "Invitation email has been sent successfully."
+    destroy:
+      confirm: "Are you sure?"
+      success: "Deleted successfully."
+    access:
+      denied: "Access denied."
+  articles:
+    access:
+      denied: "Access denied."
+    created: "Article has been created."
+    updated: "Update successfully"
+    destroy:
+      confirm: "Are you sure?"

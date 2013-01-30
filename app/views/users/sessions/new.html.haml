@@ -1,0 +1,21 @@
+.sign-form
+  = render '/users/shared/sign_form_header'
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    %p
+      = f.label :email
+      = f.email_field :email
+    %p
+      = f.label :password
+      = f.password_field :password
+    .sign-form-buttons
+      .left.btn= f.submit "Sign in"
+      - if devise_mapping.rememberable?
+        .left
+          = f.check_box :remember_me
+          = f.label :remember_me
+      - if devise_mapping.recoverable? && controller_name != 'passwords'
+        .left.last= link_to_function "Forgot password?", "showElement('.sign-form-hidden-container')"
+      .clear
+  .sign-form-hidden-container.hidden
+    .title.top-line Forgot your password?
+    = render '/users/passwords/form'

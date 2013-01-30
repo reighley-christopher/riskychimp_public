@@ -1,0 +1,35 @@
+= render '/refinery/head'
+%body#top
+  #js-flash-message.flash-container
+    - if flash[:notice]
+      .flash-notice= flash[:notice]
+    - elsif flash[:alert]
+      .flash-alert= flash[:alert]
+    - elsif flash[:error]
+      .flash-error= flash[:error]
+  #blank-container.container &nbsp;
+  #header-container.container
+    .wrapper-overlay
+      .wrapper
+        #header-alt
+          = render '/refinery/header'
+  #credential-container.container
+    .wrapper-overlay
+      .wrapper
+        #user-box.right
+          - if current_user
+            = link_to "Hi, #{current_user.email}", user_path(current_user)
+        .clear
+  #body-container.container{class: "#{'refinery' if controller_path == 'refinery/pages'} #{'signed-in' if current_user}"}
+    .wrapper
+      #content
+        = yield
+  #footer
+    = render '/refinery/footer'
+
+:javascript
+  $(function() {
+    setTimeout(function() {
+      $("#js-flash-message").fadeOut(300);
+    }, 2000);
+  })

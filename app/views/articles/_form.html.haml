@@ -1,0 +1,36 @@
+#article-form-container.js-article-form
+  = form_for @article do |f|
+    = error_messages_for(@article)
+    %p
+      = f.label :url
+      = f.text_field :url
+      %span.hidden.ajax-loader= image_tag('ajax-loader.gif')
+    - if @article.url
+      %p
+        = f.label :title
+        = f.text_field :title
+      %p
+        = f.label :description
+        = f.text_area :description
+      %p
+        = f.label :comment
+        = f.text_area :comment
+      %p
+        = f.label :image_url
+        = f.select :image_url, @article.images_for_select
+      .thumbnail-preview= image_tag(@article.image_url)
+      %p.actions
+        = f.submit 'Save'
+    %p
+      = link_to_function "Feed data", "feedDataFromUrl()"
+
+:javascript
+  $(document).ready(function() {
+    $(".js-article-form #article_url").focusout(function() {
+      feedDataFromUrl();
+    })
+
+    $("#article_image_url").change(function() {
+      $(".thumbnail-preview img").attr("src", $(this).val());
+    })
+  })

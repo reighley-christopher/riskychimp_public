@@ -1,0 +1,16 @@
+.article-content
+  .title= link_to article.title, article.url, target: 'blank'
+  .thumb-container= image_tag(article.image_url, :width => '100%', :height => '100%')
+  .description!= article.description
+  - if article.comment.present?
+    .article-comment
+      .comment-title comment
+      .comment-body= article.comment
+  .article-control
+    .article-control-line{ class: "#{'manageable' if current_user && current_user.admin?}" }
+    - if current_user && current_user.admin?
+      .links-container
+        .edit-link
+          = link_to image_tag("edit.png"), edit_article_path(article)
+        .delete-link
+          = link_to image_tag("del.png"), article_path(article), method: :delete, confirm: t("articles.destroy.confirm")

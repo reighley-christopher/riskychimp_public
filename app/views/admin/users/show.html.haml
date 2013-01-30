@@ -1,0 +1,10 @@
+= page_header 'User Information'
+
+= render partial: '/users/shared/profile', locals: { user: @user }
+
+.user-control
+  = link_to "Login as user", login_admin_user_path(@user), method: :post
+  = link_to "Edit", edit_admin_user_path(@user)
+  = link_to "Delete", admin_user_path(@user), method: :delete, confirm: t("admin.users.destroy.confirm")
+  = link_to "Show all", admin_users_path
+  = link_to "Manage Reviewers", user_reviewers_path(user_id: @user)

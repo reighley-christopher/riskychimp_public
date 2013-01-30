@@ -1,0 +1,35 @@
+= page_header "Admin - #{params[:role].pluralize}"
+
+%ul#nav-tab
+  %li{ class: "#{'selected' if params[:role] == "merchant"}" }= link_to "Merchants", admin_users_path(role: 'merchant')
+  |
+  %li{ class: "#{'selected' if params[:role] == "admin"}" }= link_to "Admins", admin_users_path(role: 'admin')
+  |
+  %li{ class: "#{'selected' if params[:role] == "Pending"}" }= link_to "Pending", admin_users_path(role: "Pending")
+  |
+  %li{ class: "#{'selected' if params[:role] == "Error"}" }= link_to "Error", admin_users_path(role: "Error")
+%table#users
+  %tr
+    %th Email
+    %th Company Name
+    %th Company Website
+    %th
+    %th
+    %th
+    %th
+  - @users.each do |user|
+    %tr
+      %td= link_to user.email, admin_user_path(user)
+      %td= user.company_name
+      %td= user.company_website
+      %td= link_to "Transactions", transactions_path(user_id: user)
+      %td= link_to "Login as user", login_admin_user_path(user), method: :post
+      - if params[:role] == 'Pending'
+        %td= link_to "Resend Invitation", invite_admin_user_path(user)
+      - else
+        %td= link_to 'Edit', edit_admin_user_path(user)
+      %td= link_to 'Delete', admin_user_path(user), method: :delete, confirm: t("admin.users.destroy.confirm")
+= will_paginate @users
+
+- if params[:role] != 'Pending' && params[:role] != 'Error'
+  = link_to "Create #{params[:role].to_s.camelize}", new_admin_user_path(:role => params[:role].to_s.camelize)

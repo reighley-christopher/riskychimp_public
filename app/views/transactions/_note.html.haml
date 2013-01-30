@@ -1,0 +1,13 @@
+- if transaction.related_notes.present?
+  .strong Related Notes:
+  %ul
+    - transaction.related_notes.each do |note|
+      %li
+        != "From #{link_to "Transaction #{note.transaction_id}", transaction_path(note.transaction)}:"
+        .italic= note.content
+= form_for [transaction, note], remote: true do |f|
+  %p= error_messages_for(note)
+  %p= f.label :content, "Note"
+  %p= f.text_area :content
+  %p= f.submit
+  .notice= @msg

@@ -1,0 +1,19 @@
+= form_for @user, :url => user_path(@user), :html => {:multipart => true} do |f|
+  = error_messages_for(@user)
+  %p
+    = f.label :email
+    = f.text_field :email
+  %p
+    = f.label :company_name
+    = f.text_field :company_name
+  %p
+    = f.label :company_website
+    = f.text_field :company_website
+  %p
+    = f.label :logo
+    = f.file_field :logo
+    = f.hidden_field :logo_cache
+    %br
+    = logo_tag @user.logo_url
+  %p
+    = f.submit "Update"

@@ -1,0 +1,9 @@
+development: &development
+  user_name: "youremail@gmail.com"
+  password: "yourpassword"
+
+production:
+  <<: *development
+
+test:
+  <<: *development

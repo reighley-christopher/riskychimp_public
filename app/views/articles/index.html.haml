@@ -1,0 +1,9 @@
+= page_header 'Articles'
+- unless @articles.count.zero?
+  .articles-content
+    .latest-article= render @articles.to_a.first
+    .other-articles
+      = render @articles[1..@articles.size]
+  = will_paginate @articles
+- if current_user && current_user.admin?
+  = link_to "Add new article", new_article_path

@@ -1,0 +1,23 @@
+%tr{id: "transaction_#{transaction.id}"}
+  %td= link_to transaction.id, transaction_path(transaction)
+  %td= transaction.transaction_id
+  %td= transaction.amount
+  %td
+    = link_to transaction.email, email_detail_transaction_path(transaction), remote: true
+    .hidden{id: "transaction_#{transaction.id}_email_detail"} Something here
+  %td= transaction.ip
+  %td= transaction.transaction_datetime
+  %td.reviewer= transaction.reviewer_email
+  %td.transaction-actions
+    - if transaction.pending?
+      = link_to "Approve", change_status_transaction_path(transaction, status: "approve"), :method => :put, :remote => true
+      = link_to "Reject", change_status_transaction_path(transaction, status: "reject"), :method => :put, :remote => true
+      = link_to "Hold", change_status_transaction_path(transaction, status: "hold"), :method => :put, :remote => true
+    - else
+      = transaction.status.capitalize
+      - if current_user.admin? || current_user.merchant?
+        = link_to "Reset", change_status_transaction_path(transaction, status: "reset"), :method => :put, :remote => true
+  %td= link_to_function "Show Note", "toggleNote('js-note-container-#{transaction.id}', this)"
+%tr
+  %td{id: "js-note-container-#{transaction.id}", class: 'hidden', colspan: 8}
+    = render partial: 'note', locals: {note: transaction.note || Note.new(transaction: transaction), transaction: transaction}

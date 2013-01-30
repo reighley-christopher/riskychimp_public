@@ -1,0 +1,21 @@
+- url = @reviewer.new_record? ? user_reviewers_path(user_id: @merchant) : user_reviewer_path(@reviewer, user_id: @merchant)
+= form_for @reviewer, url: url do |f|
+  = error_messages_for(@reviewer)
+  %p
+    = f.label :email
+    = f.text_field :email
+  - unless @reviewer.new_record?
+    %p
+      = f.label :company_name
+      = f.text_field :company_name
+    %p
+      = f.label :company_website
+      = f.text_field :company_website
+    %p
+      = f.label :logo
+      = f.file_field :logo
+      = f.hidden_field :logo_cache
+      %br
+      = logo_tag @reviewer.logo_url
+  %p
+    = f.submit "#{@reviewer.new_record? ? 'Send Invitation Email' : 'Update'}"

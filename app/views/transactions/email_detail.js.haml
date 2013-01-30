@@ -1,0 +1,2 @@
+$("#transaction_#{@transaction.id}_email_detail").html("#{escape_javascript render partial: 'email_detail'}");
+$("#transaction_#{@transaction.id}_email_detail").dialog({width: 600, modal: true, title: "Detail for email '#{@transaction.email}'"});

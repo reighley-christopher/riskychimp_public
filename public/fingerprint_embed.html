@@ -1,0 +1,6 @@
+<script type="text/javascript" src="/fingerprint/fingerprint.js"></script>
+<script type="text/javascript">
+  function fingerprintCallback(data) {
+    window.parent.postMessage(data.fingerprint, "*");
+  }
+</script>

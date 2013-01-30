@@ -1,0 +1,18 @@
+.user-information
+  .user-email
+    .user-info-title Email:
+    .user-info-content= user.email
+  .user-company-name.left
+    .user-info-title Company Name:
+    .user-info-content= user.company_name
+  .user-company-website.left
+    .user-info-title Company Website:
+    .user-info-content= user.company_website
+  .clear
+  .user-api-key
+    .user-info-title API Key:
+    .user-info-content= user.merchant? ? user.api_key : 'N/A'
+.user-setting
+  .user-logo
+    = image_tag user.logo_path
+.clear

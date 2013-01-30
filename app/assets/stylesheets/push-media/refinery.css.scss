@@ -1,0 +1,146 @@
+.container { text-align: left; background: #fff; }
+#blank-container { height: 0px; }
+#header-container {
+  position: absolute;
+  width: 100%;
+  .wrapper-overlay {
+    @include transparent(rgb(25, 25, 25), 0.8);
+    width: 100%;
+  }
+  font-family: 'Futura';
+}
+#credential-container {
+  position: absolute;
+  width: 100%;
+  margin-top: 58px;
+  font-family: 'Futura';
+  a {
+    color: #616161;
+    text-decoration: none;
+    font-weight: bold;
+    &:hover {
+      background: none;
+      color: $sun-yellow;
+    }
+  }
+  .wrapper-overlay {
+    @include transparent(rgb(118, 118, 118), 0.24);
+    width: 100%;
+    padding: 8px 0;
+  }
+}
+
+#body-container {
+  margin-top: 89px;
+  font-family: 'PlantagenetCherokee', Arial, sans-serif;
+
+  h1, h2, h3 {
+    text-transform: none;
+  }
+
+  h1 {
+    font-size: 36px;
+    padding: 20px 0 30px;
+    margin: 0;
+  }
+}
+
+/* REFINERY PAGE PARTS
+========================================================================= */
+.refinery .wrapper {
+  width: 100%;
+  table {
+    border: none;
+    border-collapse: separate;
+    tr:hover {
+      background: none;
+    }
+    td {
+      padding-left: 0;
+    }
+  }
+}
+section#banner {
+  padding: 0;
+  margin: 0;
+}
+
+section#body {
+  padding-top: 10px;
+}
+
+section#bottom {
+  padding: 20px 0;
+  background-color: #4c4c4c;
+  * {
+    color: #fff;
+  }
+}
+
+/* NAV SECTION */
+#main-nav li.btn {
+  margin: 13px 0 0 10px;
+  width: 89px;
+  height: 29px;
+  padding: 0;
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    &:hover {
+      background: none;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+#header-alt {
+  #main-nav {
+    li {
+      margin-bottom: 0px;
+      a {
+        padding: 17px 14px 21px;
+      }
+    }
+  }
+  a {
+    &:hover {
+      background: none;
+    }
+  }
+}
+#main-nav li#sign-in-btn {
+  background: image-url('sign-btn.png') no-repeat 0px 0px;
+  &:hover {
+    background: image-url('sign-btn.png') no-repeat 0px -33px;
+  }
+}
+
+#main-nav li#sign-out-btn {
+  background: image-url('sign-btn.png') no-repeat 0px -69px;
+  &:hover {
+    background: image-url('sign-btn.png') no-repeat 0px -104px;
+  }
+}
+
+#main-nav {
+  height: 58px;
+  margin-bottom: 0;
+  margin-right: 0px;
+}
+
+#user-box {
+  margin-right: 0px;
+  height: 15px;
+}
+
+#footer {
+  font-family: 'Futura';
+}
+
+/* Override push-media elements */
+#footer, #content, #header-alt { padding-top: 0px !important; padding-bottom: 0px !important;}
+#bottomline { margin-top: 0px !important; }

@@ -1,0 +1,15 @@
+= page_header 'User Setting'
+
+= form_for @user.user_setting, :url => update_setting_user_path(@user) do |f|
+  = error_messages_for(@user.user_setting)
+  %p
+    = f.label :amount_threshold
+    = f.text_field :amount_threshold
+  %p
+    = f.label :time_zone
+    = f.time_zone_select :time_zone
+  %p
+    - @user.user_setting.adjustable_model_parameters.each do |name, weight|
+      = label_tag name
+      = number_field_tag name, weight
+    = f.submit "Update"

@@ -1,0 +1,1 @@
+iconv -f UTF-8 -t US-ASCII -c sample.tsv | awk -f tsv.awk > static_sample.rb

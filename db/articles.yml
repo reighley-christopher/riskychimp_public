@@ -1,0 +1,30 @@
+---
+- url: http://www.marketwatch.com/story/new-visa-consumer-authentication-service-combats-ecommerce-fraud-2012-11-26
+  title: New Visa Consumer Authentication Service Combats eCommerce Fraud
+  description: Visa Inc. today announced a new solution in its information products
+    line up to help issuers reduce the risk of eCommerce fraud using real-time, risk-based
+    transaction analysis.
+  image_url: http://s.marketwatch.com/public/resources/MWimages/MW-AE356_fb_mw__MA_20100420181620.jpg
+  comment: 
+- url: http://www.theverge.com/2012/11/20/3670818/chargeback-cc-credit-card-dispute
+  title: ChargeBack.cc might be legal, but who is it good for?
+  description: ! 'When the Australian startup ChargeBack.cc launched last week, cofounder
+    James Peter tinkered around with Google’s AdWords tool to find the perfect, stickiest
+    tagline: "ChargeBack.cc — Get your...'
+  image_url: http://cdn0.sbnation.com/entry_photo_images/7261193/credit_card_logos_large_large.jpg
+  comment: this is the first comment
+- url: http://www.telegraph.co.uk/news/uknews/crime/9771627/Britain-losing-the-war-on-cyber-crime-as-costs-hit-205-million.html?goback=%2Egde_71093_member_200080081
+  title: Britain 'losing the war on cyber crime' as costs hit £205 million - Telegraph
+  description: Britain is losing the war on internet crime, a leading police officer
+    has   admitted, after it emerged that cyber crime cost UK businesses around &pound;205   million
+    in lost revenue last year.
+  image_url: http://i.telegraph.co.uk/multimedia/archive/01805/cyberattack_1805164a.jpg
+  comment: Not too long ago, we were in the same boat, on this side of the pond.
+- url: http://www.theatlantic.com/business/archive/2012/03/why-are-criminals-stealing-tide-detergent-and-using-it-for-money/254631/
+  title: Why Are Criminals Stealing Tide Detergent and Using It for Money?
+  description: ! 'There''s a new liquid asset in town. It''s blue, it''s viscous,
+    and it''s versatile: You can pour it in a machine with your clothes, or sell it
+    for pot.'
+  image_url: http://cdn.theatlantic.com/static/mt/assets/business/330_TIDE_Reuters.jpg
+  comment: A fascinating look into brick-and-mortar theft and why it could impact
+    your online sales.

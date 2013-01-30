@@ -1,0 +1,5 @@
+#bottomline
+  .wrapper
+    %p.left= t('.copyright', :year => Time.now.year, :site_name => 'RiskyChimp')
+    = render '/refinery/menu', dom_id: 'footer-nav', css: 'right padd20-right'
+    .clear

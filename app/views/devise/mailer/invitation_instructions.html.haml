@@ -1,0 +1,9 @@
+Welcome to RiskyChimp!
+%p You've been invited to create an account with RiskyChimp, your partner in fighting fraud.
+%p= link_to 'Accept Invitation', accept_invitation_url(@resource, :invitation_token => @resource.invitation_token)
+%p
+  Your account will be created when you access the link above and set your password. If you feel this was sent to you in error,
+  = link_to 'please let us know!', report_error_users_url(:invitation_token => @resource.invitation_token)
+
+%p Thanks,
+%p The RiskyChimp Team!

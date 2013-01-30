@@ -1,0 +1,49 @@
+= page_header 'Transaction Information'
+
+%p
+  .strong Transaction ID:
+  = @transaction.transaction_id
+%p
+  .strong Client:
+  = @transaction.user_email
+%p
+  .strong Amount:
+  = @transaction.amount
+%p
+  .strong Transaction Date:
+  = @transaction.transaction_datetime
+%p
+  .strong Email:
+  = @transaction.email
+%p
+  .strong Name:
+  = @transaction.name
+%p
+  .strong IP:
+  = @transaction.ip
+%p
+  .strong Shipping City:
+  = @transaction.shipping_city
+%p
+  .strong Shipping State:
+  = @transaction.shipping_state
+%p
+  .strong Shipping Zip:
+  = @transaction.shipping_zip
+%p
+  .strong Shipping Country:
+  = @transaction.shipping_country
+%p
+  .strong Purchaser ID:
+  = @transaction.purchaser_id
+%p
+  .strong Device ID:
+  = @transaction.device_id
+%p
+  .strong Other data:
+  = @transaction.other_data
+%p
+  .strong Score:
+  = @transaction.score
+%div{id: "js-note-container-#{@transaction.id}"}
+  = render partial: 'note', locals: {note: @note, transaction: @transaction}

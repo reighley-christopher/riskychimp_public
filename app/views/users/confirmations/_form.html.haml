@@ -1,0 +1,9 @@
+= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, id: "resend-confirmation" }, remote: true) do |f|
+  = devise_error_messages!
+  %p
+    = f.label :email
+    = f.email_field :email
+  .sign-form-buttons
+    .left.btn= f.submit "Resend"
+    .left.ajax-loader= image_tag('ajax-loader.gif')
+    .clear

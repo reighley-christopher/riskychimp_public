@@ -1,0 +1,10 @@
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, id: "forgot-password" }, remote: true) do |f|
+  = devise_error_messages!
+  %p
+    = f.label :email
+    = f.email_field :email
+  .sign-form-buttons
+    .left.btn= f.submit "Send"
+    .left.ajax-loader= image_tag('ajax-loader.gif')
+    .left.last= link_to "Didn't receive confirmation instructions?", '/users/sign_up?reconfirm=true'
+    .clear

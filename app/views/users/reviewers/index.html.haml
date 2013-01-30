@@ -1,0 +1,27 @@
+= page_header "Reviewers"
+
+%table
+  %tr
+    %th Email
+    %th Company Name
+    %th Company Website
+    - if current_user.admin?
+      %th
+    %th
+    %th
+  - @reviewers.each do |reviewer|
+    %tr
+      %td= link_to reviewer.email, user_reviewer_path(reviewer, user_id: @merchant.id)
+      %td= reviewer.company_name
+      %td= reviewer.company_website
+      - if current_user.admin?
+        %td= link_to "Login as user", login_admin_user_path(reviewer), method: :post
+      %td
+        - if current_user.admin?
+          = link_to 'Edit', edit_admin_user_path(reviewer)
+        - else
+          = link_to 'Edit', edit_user_reviewer_path(reviewer, user_id: @merchant.id)
+      %td= link_to "Delete", user_reviewer_path(reviewer, user_id: @merchant.id), method: :delete, confirm: t("reviewers.destroy.confirm")
+= will_paginate @reviewers
+
+= link_to "Create Reviewer", new_user_reviewer_path(user_id: @merchant.id)

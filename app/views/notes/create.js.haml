@@ -1,0 +1,1 @@
+$("#js-note-container-#{@transaction.id}").html("#{escape_javascript(render partial: '/transactions/note', locals: {note: @note, transaction: @transaction})}");

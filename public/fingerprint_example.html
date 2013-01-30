@@ -1,0 +1,23 @@
+<html><head></head><body>
+<p>
+To use the flash fingerprinter you will need:
+  <ol>
+  <li>A Form Field to transmit the data to the Merchant server.  In this example <code>fingerprint_field</code></li>
+  <li>A fragment of javascript to copy the data to the form field when it is ready.  In this example it is called <code>check</code></li>
+  <li>An embed tag with a url to the fingerprinter on the riskybiz server.  In this example <code>fingerprinter</code></li>
+  </ol>
+<p>Pay attention to the <code>src</code> attribute in the <code>embed</code> tag.  It should be the url to the riskybiz server.  The code should be downloaded from our server.  Making a copy will not work.</p>
+<p>The flashvars variable contains an "onload" key which will fire a javascript function when the data is ready.</p>
+
+</p>
+
+<input type="text" id="fingerprint_field">
+<script language=javascript>function check(){ document.getElementById("fingerprint_field").value = document.getElementById("fingerprinter").fingerprint(); }</script>
+<embed id="fingerprinter"
+       allowscriptaccess="always"
+       name="fingerprinter"
+       src="http://localhost:3000/fingerprint/fingerprint.swf"
+       height="1"
+       width="1"
+       flashvars="onload=check()">
+</body></html>

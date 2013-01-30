@@ -1,0 +1,16 @@
+.email_detail
+  %h3 Transactions History
+  %table
+    %tr
+      %th ID
+      %th Transaction ID
+      %th Amount
+      %th IP
+      %th Transaction Date
+    - @transactions.each do |transaction|
+      %tr
+        %td= transaction.id
+        %td= transaction.transaction_id
+        %td= transaction.amount
+        %td= transaction.ip
+        %td= transaction.transaction_datetime

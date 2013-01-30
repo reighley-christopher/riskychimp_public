@@ -1,0 +1,40 @@
+= page_header 'Transactions'
+= form_for @user.user_setting, :url => update_amount_threshold_transactions_path(user_id: @user) do |f|
+  = error_messages_for(@user.user_setting)
+  %p
+    = f.label :amount_threshold
+    = f.text_field :amount_threshold
+  %p
+    = f.submit "Update"
+
+%ul#nav-tab
+  %li{class: "#{'selected' if params[:from] == 'today'}"}= link_to "Today", transactions_path(params.merge(from: 'today'))
+  |
+  %li{class: "#{'selected' if params[:from] == '7_days'}"}= link_to "7 days", transactions_path(params.merge(from: '7_days'))
+  |
+  %li{class: "#{'selected' if params[:from] == 'all' || params[:from].nil? }"}= link_to "All", transactions_path(params.merge(from: 'all'))
+%table.sortable#transactions-list
+  %tr
+    %th= sortable "id"
+    %th= sortable "transaction_id", "Transaction ID"
+    %th= sortable "amount"
+    %th= sortable "email"
+    %th= sortable "ip"
+    %th= sortable "transaction_date"
+    %th Reviewer
+    %th
+    %th
+  = render @transactions
+= will_paginate @transactions
+
+:javascript
+  function toggleNote(container_id, element) {
+    if (element.innerHTML == "Show Note") {
+      showElement("#" + container_id);
+      element.innerHTML = "Hide Note";
+    }
+    else {
+      hideElement("#" + container_id);
+      element.innerHTML = "Show Note";
+    }
+  }

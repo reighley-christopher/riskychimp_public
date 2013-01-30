@@ -1,0 +1,12 @@
+<html xmlns="http://www.w3.org/1999/html"><head><title>Fingerprint JS in it</title></head>
+<body>
+<div id="fingerprint_status"></div>
+<input type="text" id="fingerprint_str">
+<script language='javascript'>
+  function fingerprintCallback(data) {
+    document.getElementById("fingerprint_status").innerHTML = "DONE";
+    document.getElementById("fingerprint_str").value = data.fingerprint;
+  }
+</script>
+<script type="text/javascript" src="/fingerprint/fingerprint.js"></script>
+</body></html>

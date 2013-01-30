@@ -1,0 +1,8 @@
+= page_header 'User Information'
+
+= render partial: '/users/shared/profile', locals: { user: @user }
+.user-control
+  = link_to "Edit", edit_user_path(@user)
+  = link_to "Setting", setting_user_path(@user)
+  = link_to "Change password", change_password_user_path(@user)
+  = link_to "Manage Reviewers", user_reviewers_path(user_id: @user)# if @user.merchant?

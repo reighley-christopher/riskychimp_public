@@ -1,0 +1,18 @@
+- if (roots = local_assigns[:roots] || (collection ||= refinery_menu_pages).roots).present?
+  - dom_id ||= 'menu'
+  - css = [(css || 'menu clearfix')].flatten.join(' ')
+  - hide_children = Refinery::Core.menu_hide_children if hide_children.nil?
+
+%ul{id: "#{dom_id}", class: "#{css}"}
+  = render partial: '/refinery/menu_branch', collection: roots, locals: { hide_children: hide_children, sibling_count: roots.length - 1, menu_level: local_assigns[:menu_levels], apply_css: true}
+  %li{class: "#{'selected' if controller_name == 'articles'}"}= link_to 'Articles', articles_path
+  - if current_user
+    %li{class: "#{'selected' if controller_name == 'transactions'}"}= link_to 'Transactions', transactions_path
+  - if refinery_user?
+    %li= link_to 'CMS', refinery.admin_root_path
+  - if current_user && current_user.has_role?(:admin)
+    %li{class: "#{'selected' if controller_path.start_with?('admin/')}"}= link_to 'Admin', admin_users_path
+  - if current_user
+    %li#sign-out-btn.btn= link_to "", destroy_user_session_path, :method => :delete
+  - else
+    %li#sign-in-btn.btn= link_to "", new_user_session_path

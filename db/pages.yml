@@ -1,0 +1,111 @@
+---
+- title: Home
+  menu_title: ''
+  custom_slug: 
+  slug: home
+  parent_id: 
+  show_in_menu: true
+  link_url: /
+  menu_match: 
+  deletable: true
+  draft: false
+  skip_to_first_child: false
+  view_template: 
+  layout_template: 
+  parts_attributes:
+  - body: ! "<div id=\"bg\"></div>\r\n<div class=\"banner-message\">\r\n<div class=\"banner-title\">Protect
+      Your Business</div>\r\n<div class=\"banner-body\">We use machine learning to
+      identify how your legitimate purchasers interact with your site.<br />\r\nThen,
+      we uncover the critical rules for your custom <span class=\"green-highlight\">fraud
+      fighting</span> solution\r\n</div>\r\n</div>\r\n<a href=\"/users/sign_in\" class=\"get-start-btn\"></a>\r\n<style>\r\n#body-container
+      #content {\r\nbackground-color: white;\r\n}\r\n#banner .inner {\r\nwidth: 100%;\r\n}\r\n.wrapper
+      {\r\n}\r\n.container {\r\nbackground: none;\r\n}\r\n#body-container {\r\nmargin-top:
+      0px;\r\n}\r\n.get-start-btn {\r\nbackground: url('/assets/get-start.png') no-repeat
+      0 0;\r\ndisplay: block;\r\nwidth: 246px;\r\nheight: 48px;\r\ntext-decoration:
+      none;\r\nposition: relative;\r\ntop: -152px;\r\nmargin: 0 auto;\r\n}\r\n.get-start-btn:hover
+      {\r\nbackground: url('/assets/get-start.png') no-repeat 0 -53px;\r\n}\r\n.banner-message
+      {\r\ntext-align: center;\r\nposition: relative;\r\ntop: -170px;\r\nfont-family:
+      'PlantagenetCherokee';\r\nfont-size: 16px;\r\n}\r\n.banner-title {\r\nfont-size:
+      52px;\r\nfont-family: 'Futura';\r\n}\r\n#bg {\r\nmargin: 0; \r\n    height:
+      606px;\r\n    width: 100%;\r\n    background: transparent url(\"https://s3.amazonaws.com/riskybiz/assets/riskychimp_bg.jpg\")
+      no-repeat center;\r\n    overflow-x: hidden; \r\n}\r\n.banner-body {\r\nmargin-top:
+      12px;\r\nline-height: 22px;\r\n}\r\n.green-highlight {\r\ncolor: #4e7003;\r\n}\r\n#credential-container
+      a {\r\ncolor: #fff;\r\n}\r\n</style>"
+    title: Banner
+    position: 0
+  - body: ! "<table class=\"homepage-content\">\r\n<tbody><tr class=\"first-step\">\r\n<td><div
+      class=\"homepage-section-image\"></div>\r\n</td>\r\n<td>\r\n<div class=\"homepage-section-title\">First
+      - Fire Fight and Build Foundation</div>\r\n<div class=\"homepage-section-body\">We
+      help you prep your data for sharing and evaluation. And, make any urgent changes
+      required to stop an immediate problem. This is a critical step with two goals.
+      we immediately stop current attacks and build the foundation for longer term
+      fraud fighting.<br />\r\n<a href=\"#\">Learn more</a>\r\n\r\n</div>\r\n\r\n\r\n</td>\r\n</tr>\r\n<tr
+      class=\"second-step\">\r\n<td>\r\n<div class=\"homepage-section-title\">Second
+      - Tailor</div>\r\n<div class=\"homepage-section-body\">After the foundation
+      has been built, we optimize custom rules that make sense for your business.
+      Fraud fighting measures are never a one size fits all solution. We have rules
+      that apply to the individual merchant only, to the particular merchant industry
+      and at ecommerce-wide levels.<br />\r\n<a href=\"#\">Learn more</a>\r\n</div>\r\n\r\n\r\n</td>\r\n<td><div
+      class=\"homepage-section-image\"></div>\r\n</td>\r\n</tr>\r\n<tr class=\"third-step\">\r\n<td><div
+      class=\"homepage-section-image\"></div>\r\n</td>\r\n<td>\r\n<div class=\"homepage-section-title\">Third
+      - Iterate and Improve</div>\r\n<div class=\"homepage-section-body\">As our partnership
+      continues, our model will get incremenally improve simply by evaluating the
+      transactions at your site and your actions when you review your queue. We also
+      evaluate and iterate the features of the model and the queue itself, ensuring
+      that we maximize our model's effectiveness and minimize your time spend on Fraud
+      as you expand your business.<br />\r\n<a href=\"#\">Learn more</a>\r\n</div>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<style>\r\n\r\n.homepage-content
+      {\r\nmargin-top: -80px;\r\n}\r\n\r\na {\r\ncolor: orange;\r\n}\r\n\r\ntable
+      tr {\r\nvertical-align: top; \r\n}\r\n\r\ntable tr:nth-child(2n) {\r\nbackground-color:
+      white; \r\n}\r\n\r\n.homepage-section-title {\r\nfont-family: 'Futura';\r\nfont-size:
+      27px;\r\nline-height: 30px;\r\n}\r\n\r\n.homepage-section-body {\r\nmargin-top:
+      22px;\r\nfont-size: 16px;\r\nline-height: 20px;\r\nfont-family: 'PlantagenetCherokee';\r\n}\r\n\r\n.first-step
+      .homepage-section-image {\r\nwidth: 200px;\r\nheight: 196px;\r\nbackground:
+      url('/assets/hat.png') no-repeat ;\r\nmargin-left: 40px;\r\n}\r\n\r\n.first-step
+      .homepage-section-title {\r\nmargin-left: 10px;\r\nmargin-right: 110px;\r\n}\r\n\r\n.first-step
+      .homepage-section-body {\r\nmargin-left: 10px;\r\nmargin-right: 110px;\r\n}\r\n\r\n\r\n.second-step
+      .homepage-section-image {\r\nwidth: 96px;\r\nheight: 225px;\r\nmargin-left:
+      153px;\r\nbackground: url('/assets/tailor.png') no-repeat ;\r\n}\r\n\r\n.second-step
+      .homepage-section-title {\r\nmargin-right: 110px;\r\n}\r\n\r\n.third-step .homepage-section-image
+      {\r\nwidth: 180px;\r\nheight: 180px;\r\nbackground: url('/assets/improve.png')
+      no-repeat ;\r\nmargin-left: 40px;\r\n}\r\n\r\n.third-step .homepage-section-title
+      {\r\nmargin-left: 10px;\r\nmargin-right: 110px;\r\n}\r\n\r\n.third-step .homepage-section-body
+      {\r\nmargin-left: 10px;\r\nmargin-right: 110px;\r\n}\r\n\r\n\r\n</style>"
+    title: Body
+    position: 1
+- title: Team
+  menu_title: 
+  custom_slug: 
+  slug: team
+  parent_id: 
+  show_in_menu: true
+  link_url: ''
+  menu_match: 
+  deletable: true
+  draft: false
+  skip_to_first_child: false
+  view_template: 
+  layout_template: 
+  parts_attributes:
+  - body: <p>Risky Chimp brings together a wealth of knowledge and experience.<img
+      src="/system/images/BAhbB1sHOgZmSSJGMjAxMi8wOS8yNC8xOS80NC80OS85NTQvU2NyZWVuX1Nob3RfMjAxMl8wOV8yNF9hdF8xMS40NC41NV9BTS5wbmcGOgZFVFsIOgZwOgp0aHVtYkkiDTIyNXgyNTU+BjsGRg/Screen%20Shot%202012-09-24%20at%2011.44.55%20AM.png"
+      title="Screen Shot 2012 09 24 At 11.44.55 Am" alt="Screen Shot 2012 09 24 At
+      11.44.55 Am" rel="225x255" height="122" width="225" /></p>
+    title: Body
+    position: 0
+- title: Terms of use
+  menu_title: terms
+  custom_slug: 
+  slug: terms
+  parent_id: 
+  show_in_menu: true
+  link_url: ''
+  menu_match: 
+  deletable: true
+  draft: false
+  skip_to_first_child: false
+  view_template: 
+  layout_template: 
+  parts_attributes:
+  - body: <p>Content goes here</p>
+    title: Body
+    position: 0
