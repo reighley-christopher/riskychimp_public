@@ -6,3 +6,5 @@
   = link_to "Setting", setting_user_path(@user)
   = link_to "Change password", change_password_user_path(@user)
   = link_to "Manage Reviewers", user_reviewers_path(user_id: @user)# if @user.merchant?
+  - if @user.has_role?("admin")
+    = link_to "Change sender email", edit_app_setting_path(@sender)

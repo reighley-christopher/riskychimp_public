@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_filter :find_user, :only => [:show, :edit, :update, :change_password, :setting, :update_setting, :update_model_params]
 
   def show
+    @sender = AppSetting.find_or_create_by_key(AppSetting::SENDER)
+    @sender.update_attribute(:value, current_user.email) unless @sender.value
   end
 
   def edit
