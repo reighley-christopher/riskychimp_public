@@ -1,4 +1,5 @@
 class AppSettingsController < ApplicationController
+  before_filter :admin_required
    # GET /app_settings/1/edit
   def edit
     @app_setting = AppSetting.find(params[:id])
