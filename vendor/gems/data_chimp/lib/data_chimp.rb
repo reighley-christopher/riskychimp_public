@@ -1,0 +1,8 @@
+require "data_chimp/classifier"
+require "data_chimp/data_column"
+require "data_chimp/explanatory_variable"
+require "data_chimp/explanatory_variable_dsl"
+require "data_chimp/fraud_model"
+require "data_chimp/promissory_object"
+require "data_chimp/scorer"
+require "data_chimp/training_sample"
