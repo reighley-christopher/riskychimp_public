@@ -4,7 +4,7 @@ class FingerprintController < ApplicationController
 
   def download
     browser_id = request.cookies[FINGERPRINT_COOKIE_KEY]
-    @browser = Browser.find(browser_id) if browser_id
+    @browser = Browser.find_by_id(browser_id) if browser_id
     @browser = Browser.create unless @browser
     cookies[FINGERPRINT_COOKIE_KEY] = @browser.id
     if params[:format] == 'js'
@@ -21,7 +21,7 @@ class FingerprintController < ApplicationController
   def phonehome
     browser_id = request.cookies[FINGERPRINT_COOKIE_KEY]
     @cookieless = true unless browser_id
-    @browser = Browser.find(browser_id) if browser_id
+    @browser = Browser.find_by_id(browser_id) if browser_id
     @browser = Browser.create unless @browser
     cookies[FINGERPRINT_COOKIE_KEY] = @browser.id
     begin
