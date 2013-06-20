@@ -223,15 +223,15 @@ describe ExplanatoryVariable do
   end
 
   it "should be able to pass sample training data to its dependencies" do
-    sample = TrainingSample.new('spec/lib/test_training_data.csv')
+    sample = TrainingSample.new('spec/test_training_data.csv')
     var = ExplanatoryVariable.lookup(:test_variable8)
     testval = var.evaluate(test_object, sample: sample)
     testval.should be_within(0.01).of((10 - 0.5) / 0.5)
   end
 
   it "should be able to use different training sets for different explanatory variables" do
-    sample8 = TrainingSample.new('spec/lib/test_training_data.csv')
-    sample9 = TrainingSample.new('spec/lib/test_training_data2.csv')
+    sample8 = TrainingSample.new('spec/test_training_data.csv')
+    sample9 = TrainingSample.new('spec/test_training_data2.csv')
     var = ExplanatoryVariable.lookup(:test_variable8)
     another_var = ExplanatoryVariable.lookup(:test_variable9)
 
@@ -240,7 +240,7 @@ describe ExplanatoryVariable do
   end
 
   it "should make sure that an isolated variable doesn't accidentally pick up a sample from a prior" do
-    sample = TrainingSample.new('spec/lib/test_training_data.csv')
+    sample = TrainingSample.new('spec/test_training_data.csv')
     var1 = ExplanatoryVariable.lookup(:test_variable8)
     var1.evaluate(test_object, sample: sample).should > 0
 
@@ -252,7 +252,7 @@ describe ExplanatoryVariable do
 
   it "should not throw a NoSampleError if a sample is passed to evaluate" do
     var2 = ExplanatoryVariable.lookup(:test_variable7)
-    sample = TrainingSample.new("spec/lib/test_training_data.csv")
+    sample = TrainingSample.new("spec/test_training_data.csv")
     var2.evaluate(test_object, sample: sample).should == 9.5
   end
 

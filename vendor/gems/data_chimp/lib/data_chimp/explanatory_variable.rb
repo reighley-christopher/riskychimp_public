@@ -65,7 +65,7 @@ class ExplanatoryVariable
     def load_variable_definitions
       return if @variable_definitions_loaded
       self.loading_exceptions = []
-      Dir["#{Rails.configuration.root}/app/models/math/**/*_var.rb"].each do |filename|
+      Dir[DataChimp.path].each do |filename|
         load(filename)
       end
       @variable_definitions_loaded = true

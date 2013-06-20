@@ -5,11 +5,30 @@ describe "TrainingSample" do
     explanatory_variable(:x) { type :numeric }
     explanatory_variable(:y) { type :numeric }
   end
-  let(:training_sample) { TrainingSample.new("./spec/lib/test_training_data.csv") }
+  let(:training_sample) { TrainingSample.new("./spec/test_training_data.csv") }
 
   describe "initialize" do
+    class TestTrans
+      attr_accessor :amount
+      def initialize(_amount)
+        @amount = _amount
+      end
+    end
+
+    explanatory_variable :amount do
+      calculate do |tr|
+        tr.amount
+      end
+    end
+
+    explanatory_variable :email_match do
+      calculate do |tr|
+        true
+      end
+    end
+
     let(:other_sample) { TrainingSample.new([trans], [:amount, :email_match]) }
-    let(:trans) { FactoryGirl.create(:good_transaction, amount: 100) }
+    let(:trans) { TestTrans.new( 100 ) }
 
     it "should initialize a sample from either 1) a csv file, or 2) an array of transactions and an array of EV's" do
       other_sample.size.should == 1
@@ -79,19 +98,19 @@ describe "TrainingSample" do
 
   describe "#write_to_csv" do
     before :all do
-      if File.exists?('./spec/lib/training_sample_write.rb')
-        raise "this test expected that the file /spec/lib/training_sample_write.csv did not exist, " +
+      if File.exists?('./spec/training_sample_write.rb')
+        raise "this test expected that the file /spec/training_sample_write.csv did not exist, " +
                   "but it did and I panicked"
       end
     end
 
     after :all do
-      File.delete('./spec/lib/training_sample_write.rb')
+      File.delete('./spec/training_sample_write.rb')
     end
 
     it "should write the sample to a csv file" do
-      training_sample.write_to_csv('./spec/lib/training_sample_write.rb')
-      duplicate_sample = TrainingSample.new('./spec/lib/training_sample_write.rb')
+      training_sample.write_to_csv('./spec/training_sample_write.rb')
+      duplicate_sample = TrainingSample.new('./spec/training_sample_write.rb')
       duplicate_sample.size.should == training_sample.size
       duplicate_sample.col_names.should == training_sample.col_names
       duplicate_sample[:y].should == training_sample[:y]
