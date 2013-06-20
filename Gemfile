@@ -17,6 +17,7 @@ gem 'opengraph_parser', '>= 0.1.3'
 gem 'exception_notification'
 gem 'capistrano'
 gem 'newrelic_rpm'
+gem 'data_chimp', :path => 'vendor/gems/data_chimp'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,4 +1,3 @@
-require 'explanatory_variable'
 
 explanatory_variable :email_match do
   type :boolean

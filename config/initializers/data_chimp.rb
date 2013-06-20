@@ -1,0 +1,1 @@
+DataChimp.path = "#{Rails.configuration.root}/app/models/math/**/*_var.rb"

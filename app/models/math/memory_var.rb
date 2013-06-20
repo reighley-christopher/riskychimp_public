@@ -1,4 +1,3 @@
-require 'explanatory_variable'
 
 explanatory_variable :cards_by_ip do
   type :numeric

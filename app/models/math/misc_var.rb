@@ -1,4 +1,3 @@
-require 'explanatory_variable'
 
 explanatory_variable :local_time do
   type :numeric

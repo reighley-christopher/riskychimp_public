@@ -31,6 +31,11 @@ GIT
       rack-cache (>= 0.5.3)
       refinerycms-core (= 2.0.8)
 
+PATH
+  remote: vendor/gems/data_chimp
+  specs:
+    data_chimp (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -334,6 +339,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   countries
   cucumber-rails
+  data_chimp!
   database_cleaner
   debugger
   devise (= 2.1.2)
