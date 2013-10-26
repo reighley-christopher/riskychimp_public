@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/html"><head><title>This has a stupid Flash App in it</title></head>
+<body>
+  <embed id="fingerprinter"
+         allowscriptaccess="always"
+         name="fingerprinter"
+         src="/fingerprint/fingerprint.swf"
+         height="1"
+         width="1"
+         flashvars="onload=check()">
+
+  <div id="visibility_check">SEEN</div>
+  <div id="sanity_check"></div>
+  <div id="response_check"></div>
+  <div id="font_check"></div>
+  <div id="capabilities_check"></div>
+  <div id="communications_check"></div>
+  <div id="utc_offset_check"></div>
+  <div id="plugins_check"></div>
+  <div id="json"></div>
+  <script language='javascript'>
+    function check()
+      {
+      var el = document.getElementById('fingerprinter');
+      document.getElementById('response_check').innerHTML = el.respond();
+      document.getElementById('sanity_check').innerHTML = 'SANE';
+      /*
+      document.getElementById('font_check').innerHTML = JSON.parse( el.get_json() ).fonts;
+      document.getElementById('capabilities_check').innerHTML = JSON.parse( el.get_json() ).flash_capabilities;
+      document.getElementById('utc_offset_check').innerHTML = JSON.parse( el.get_json() ).utc_offset;
+      document.getElementById('plugins_check').innerHTML = JSON.parse( el.get_json() ).plugins;
+      document.getElementById('json').innerHTML = el.get_json();
+      document.getElementById('communications_check').innerHTML = el.data();
+      */
+      }
+  </script>
+</body></html>

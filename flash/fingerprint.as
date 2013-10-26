@@ -75,7 +75,10 @@ package {
 
     public function get_json():String {
     try {
-      return JSON.stringify({"flash_capabilities":capabilities(), "fonts":fonts(), "utc_offsets":utc_offsets(), "plugins":get_plugins() });
+      var str:String = JSON.stringify({"flash_capabilities":capabilities(), "fonts":fonts(), "utc_offsets":utc_offsets(), "plugins":get_plugins() });
+      str = JSON.stringify({"flash_capabilities":capabilities(), "fonts":fonts(), "utc_offsets":utc_offsets(), "plugiins":get_plugins()});
+      str = JSON.stringify({"plugins":get_plugins()});
+      return str
     } catch(ex:Error) {
       errorMessage = ex.message;
       return "{\"error\":\""+ex.message+"\"}";
