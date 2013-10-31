@@ -8,5 +8,13 @@ require "data_chimp/promissory_object"
 require "data_chimp/training_sample"
 
 module DataChimp
-  mattr_accessor(:path)
+  #was mattr_accessor but I actually don't want a Rails dependency since data_chimp is actually pretty useful in a much smaller server
+  @@path = ""
+  def self.path
+    return @@path
+  end
+
+  def self.path=(val)
+    @@path = val
+  end
 end
