@@ -8,7 +8,6 @@
     end
 
     def initialize_from_array(array, column_list)
-      column_list ||= default_column_list
       evs = column_list.map do |name|
         raise "Expected the column name '#{name}' to be a Symbol, but it was a #{name.class}" unless name.class == Symbol
         ExplanatoryVariable.lookup(name)
@@ -17,12 +16,6 @@
       @size = array.length
       @cols = {}
       evs.each{|ev| @cols[ev.name] = DataColumn.new(array.map{ |tr| ev.evaluate(tr) }) }
-    end
-
-    def default_column_list
-      [:amount, :addr_ia, :cards_by_ip, :cards_by_print, :frequency_of_ip_today,
-       :frequency_of_print_today, :addr_la_same, :international,
-       :customer_loyalty, :domain_type, :email_match].select { |attr| ExplanatoryVariable.lookup(attr) }
     end
 
     def initialize_from_filename(filename)
